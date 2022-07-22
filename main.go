@@ -1,12 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("vim-go")
-	fmt.Println("Belajar Go dengan Vim")
-	fmt.Println("Akan di Integrasi degan Github dan di Deploy ke Docker")
-	fmt.Println("Upload dengan Push dan Download dengan Pull")
-	fmt.Println("Terimakasih")
-	fmt.Println("Memperbaiki kesalahan")
+	http.Handle("/", http.FileServer(http.Dir("./static")))
+	log.Println("Listening on Port 3000...")
+	http.ListenAndServe(":3000", nil)
 }
