@@ -33,4 +33,4 @@ jobs:
       uses: docker/build-push-action@v3
       with:
               push: true
-              tags: syamban14/cicd-github-doc:v2
+              tags: cicd-github-docker:v2
